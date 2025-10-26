@@ -1,24 +1,96 @@
-*, body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Rubik', sans-serif;
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-:root{
-    font-size: 18px;
-    --Purple-600: hsl(246, 80%, 60%);
-    --Orange-300: hsl(15, 100%, 70%);
-    --Blue-300: hsl(195, 74%, 62%);
-    --Pink-400: hsl(348, 100%, 68%);
-    --Green-400: hsl(145, 58%, 55%);
-    --Purple-700: hsl(264, 64%, 52%);
-    --Yellow-300: hsl(43, 84%, 65%);
-    --Navy-950: hsl(226, 43%, 10%);
-    --Navy-900: hsl(235, 46%, 20%);
-    --Purple-500: hsl(235, 45%, 61%);
-    --Navy-200: hsl(236, 100%, 87%);
+:root {
+  font-size: 18px;
+  --Purple-600: hsl(246, 80%, 60%);
+  --Orange-300: hsl(15, 100%, 70%);
+  --Blue-300: hsl(195, 74%, 62%);
+  --Pink-400: hsl(348, 100%, 68%);
+  --Green-400: hsl(145, 58%, 55%);
+  --Purple-700: hsl(264, 64%, 52%);
+  --Yellow-300: hsl(43, 84%, 65%);
+  --Navy-950: hsl(226, 43%, 10%);
+  --Navy-900: hsl(235, 46%, 20%);
+  --Purple-500: hsl(235, 45%, 61%);
+  --Navy-200: hsl(236, 100%, 87%);
 }
 
+body {
+  font-family: "Rubik", sans-serif;
+  background: var(--Navy-950);
+  color: rgb(251, 251, 251);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+}
+
+.dashboard-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  max-width: 70em;
+  min-height: 22.5em;
+  gap: 1.5em;
+  margin: 0 1em;
+}
+
+.dashboard-header {
+  grid-row: 1 / 3;
+}
+
+.dashboard-user {
+  background: var(--Purple-600);
+  padding: 1.25em;
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -1em;
+}
+
+.dashboard-user img {
+  width: 52px;
+  height: 52px;
+  border: 2.5px solid white;
+  border-radius: 50%;
+}
+
+.dashboard-user h1 {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.dashboard-user h1 span {
+  font-size: 0.6rem;
+  color: var(--Navy-200);
+}
+
+.dashboard-timeline-toggle {
+  padding: 1.5em 1.25em 1em 1.25em;
+  background: var(--Navy-900);
+  border-radius: 0 0 10px 10px;
+}
+
+.dashboard-timeline-toggle ul li {
+  list-style: none;
+  line-height: 1.7;
+}
+
+.toggle-button {
+  cursor: pointer;
+  background-color: var(--Navy-900);
+  border: none;
+  outline: none;
+  color: var(--Purple-500);
+  font-size: 0.7rem;
+}
+
+.toggle-button:hover, .toggle-button:active, .toggle-button:focus {
+    color: rgb(251, 251, 251);
+}
 
 
