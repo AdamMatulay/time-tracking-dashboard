@@ -32,52 +32,49 @@ body {
 
 .dashboard-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  max-width: 70em;
-  min-height: 22.5em;
+  grid-template-columns: repeat(4, 1fr);
+  width: 62em;
+  margin: 0 auto;
   gap: 1.5em;
-  margin: 0 1em;
 }
+
+/* HEADER */
 
 .dashboard-header {
   grid-row: 1 / 3;
+  background: var(--Navy-900);
+  border-radius: 30px 30px 10px 10px;
 }
 
 .dashboard-user {
   background: var(--Purple-600);
-  padding: 1.25em;
   border-radius: 10px;
-  position: relative;
-  z-index: 2;
-  margin-bottom: -1em;
+  padding: 1.5em;
 }
 
 .dashboard-user img {
-  width: 52px;
-  height: 52px;
+  width: 72px;
+  height: 72px;
   border: 2.5px solid white;
   border-radius: 50%;
 }
 
-.dashboard-user h1 {
-  font-size: 1.5rem;
-  font-weight: 300;
-}
-
 .dashboard-user h1 span {
-  font-size: 0.6rem;
+  font-size: 0.8rem;
   color: var(--Navy-200);
 }
 
+.dashboard-user h1 {
+  font-size: 2rem;
+  font-weight: 300;
+}
+
 .dashboard-timeline-toggle {
-  padding: 1.5em 1.25em 1em 1.25em;
-  background: var(--Navy-900);
-  border-radius: 0 0 10px 10px;
+  padding: 1.5em;
 }
 
 .dashboard-timeline-toggle ul li {
   list-style: none;
-  line-height: 1.7;
 }
 
 .toggle-button {
@@ -86,11 +83,113 @@ body {
   border: none;
   outline: none;
   color: var(--Purple-500);
-  font-size: 0.7rem;
+  font-size: 1rem;
 }
 
-.toggle-button:hover, .toggle-button:active, .toggle-button:focus {
-    color: rgb(251, 251, 251);
+/* TILES */
+
+.dashboard-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border-radius: 10px 10px 30px 30px;
 }
 
+.dashboard-tile.one {
+  background: var(--Orange-300);
+  background-image: url(./images/icon-work.svg);
+}
 
+.dashboard-tile.two {
+  background: var(--Blue-300);
+  background-image: url(./images/icon-play.svg);
+}
+
+.dashboard-tile.three {
+  background: var(--Pink-400);
+  background-image: url(./images/icon-study.svg);
+}
+
+.dashboard-tile.four {
+  background: var(--Green-400);
+  background-image: url(./images/icon-exercise.svg);
+}
+
+.dashboard-tile.five {
+  background: var(--Purple-700);
+  background-image: url(./images/icon-social.svg);
+}
+
+.dashboard-tile.six {
+  background: var(--Yellow-300);
+  background-image: url(./images/icon-self-care.svg);
+}
+
+.dashboard-tile.one,
+.dashboard-tile.two,
+.dashboard-tile.three,
+.dashboard-tile.four,
+.dashboard-tile.five,
+.dashboard-tile.six {
+  background-repeat: no-repeat;
+  background-size: 3em;
+  background-position: 90% -0.4em;
+}
+
+.tile-content {
+  background: var(--Navy-900);
+  border-radius: 10px;
+  z-index: 2;
+  position: relative;
+  cursor: pointer;
+  padding: 1.5em;
+}
+
+.tile-category {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tile-category h2 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.timeframe-button {
+  cursor: pointer;
+  background-color: var(--Navy-900);
+  border: none;
+  outline: none;
+}
+
+.time {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.previous-text, .time-previous  {
+  font-size: 0.8rem;
+  color: var(--Navy-200);
+}
+
+/* HOVER - ACTIVE - FOCUS */
+
+.toggle-button:hover,
+.toggle-button:active,
+.toggle-button:focus {
+  color: rgb(251, 251, 251);
+}
+
+.timeframe-button:hover img,
+.timeframe-button:active img,
+.timeframe-button:focus img {
+  filter: brightness(1.2);
+  transition: filter 400ms ease;
+}
+
+.tile-content:hover {
+  filter: brightness(1.6);
+  transition: filter 400ms ease;
+}
+
+/* SMALL SCREENS */
