@@ -34,8 +34,8 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 62em;
-  margin: 0 auto;
-  gap: 1.5em;
+  margin: 3em 1.65em;
+  gap: 1.65em;
 }
 
 /* HEADER */
@@ -48,29 +48,36 @@ body {
 
 .dashboard-user {
   background: var(--Purple-600);
-  border-radius: 10px;
-  padding: 1.5em;
+  border-radius: 15px;
+  padding: 2em 1.65em 4em 1.65em;
 }
 
 .dashboard-user img {
-  width: 72px;
-  height: 72px;
+  width: 80px;
+  height: 80px;
   border: 2.5px solid white;
   border-radius: 50%;
 }
 
 .dashboard-user h1 span {
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   color: var(--Navy-200);
 }
 
 .dashboard-user h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: 300;
+  margin-top: 0.5rem;
 }
 
 .dashboard-timeline-toggle {
-  padding: 1.5em;
+  padding: 1.5em 1.65em 1.8em 1.65em;
+}
+
+.dashboard-timeline-toggle ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
 }
 
 .dashboard-timeline-toggle ul li {
@@ -92,57 +99,65 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  border-radius: 10px 10px 30px 30px;
+  border-radius: 15px 15px 30px 30px;
 }
 
 .dashboard-tile.one {
   background: var(--Orange-300);
   background-image: url(./images/icon-work.svg);
+  background-size: 78px;
+  background-position: 90% -12px;
+  background-repeat: no-repeat;
 }
 
 .dashboard-tile.two {
   background: var(--Blue-300);
   background-image: url(./images/icon-play.svg);
+  background-size: 78px;
+  background-position: 90% -9px;
+  background-repeat: no-repeat;
 }
 
 .dashboard-tile.three {
   background: var(--Pink-400);
   background-image: url(./images/icon-study.svg);
+  background-size: 78px;
+  background-position: 90% -9px;
+  background-repeat: no-repeat;
 }
 
 .dashboard-tile.four {
   background: var(--Green-400);
   background-image: url(./images/icon-exercise.svg);
+  background-size: 78px;
+  background-position: 90% -1px;
+  background-repeat: no-repeat;
 }
 
 .dashboard-tile.five {
   background: var(--Purple-700);
   background-image: url(./images/icon-social.svg);
+  background-size: 76px;
+  background-position: 90% -17px;
+  background-repeat: no-repeat;
 }
 
 .dashboard-tile.six {
   background: var(--Yellow-300);
   background-image: url(./images/icon-self-care.svg);
-}
-
-.dashboard-tile.one,
-.dashboard-tile.two,
-.dashboard-tile.three,
-.dashboard-tile.four,
-.dashboard-tile.five,
-.dashboard-tile.six {
+  background-size: 70px;
+  background-position: 90% -15px;
   background-repeat: no-repeat;
-  background-size: 3em;
-  background-position: 90% -0.4em;
 }
 
 .tile-content {
+  min-height: 10.8em;
   background: var(--Navy-900);
-  border-radius: 10px;
+  border-radius: 15px;
   z-index: 2;
   position: relative;
   cursor: pointer;
-  padding: 1.5em;
+  padding: 1.5em 1.65em 1.65em 1.65em;
 }
 
 .tile-category {
@@ -165,9 +180,11 @@ body {
 .time {
   font-size: 3rem;
   font-weight: 300;
+  margin: 1.5rem 0rem 0.5rem 0rem;
 }
 
-.previous-text, .time-previous  {
+.previous-text,
+.time-previous {
   font-size: 0.8rem;
   color: var(--Navy-200);
 }
@@ -193,3 +210,5 @@ body {
 }
 
 /* SMALL SCREENS */
+
+
