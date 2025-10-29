@@ -88,7 +88,6 @@ body {
   cursor: pointer;
   background-color: var(--Navy-900);
   border: none;
-  outline: none;
   color: var(--Purple-500);
   font-size: 1rem;
 }
@@ -174,7 +173,6 @@ body {
   cursor: pointer;
   background-color: var(--Navy-900);
   border: none;
-  outline: none;
 }
 
 .time {
@@ -187,13 +185,12 @@ body {
 .time-previous {
   font-size: 0.8rem;
   color: var(--Navy-200);
+  display: inline;
 }
 
 /* HOVER - ACTIVE - FOCUS */
 
-.toggle-button:hover,
-.toggle-button:active,
-.toggle-button:focus {
+.active {
   color: rgb(251, 251, 251);
 }
 
