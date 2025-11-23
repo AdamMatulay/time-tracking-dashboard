@@ -2,6 +2,7 @@ const toggleButtons = document.querySelectorAll(".toggle-button");
 const dailyButton = document.querySelector(".toggle-button.daily");
 const weeklyButton = document.querySelector(".toggle-button.weekly");
 const monthlyButton = document.querySelector(".toggle-button.monthly");
+const previousText = document.querySelectorAll(".previous-text");
 
 // FETCH DATA
 
@@ -10,37 +11,43 @@ let data = [];
 fetch("./data.json")
   .then((response) => {
     if (!response.ok) throw new Error("DATA.JSON FAILED!");
-
     return response.json();
   })
   .then((jsonData) => {
     data = jsonData;
     populateDOM(data);
+  })
+  .catch((error) => {
+    console.error("Failed to fetch data:", error);
   });
 
 // MAP DATA
 
-const previousText = document.querySelectorAll(".previous-text");
-
 const elementTimeMap = {
-    "Work": document.querySelector(".time.work"),
-    "Play": document.querySelector(".time.play"),
-    "Study": document.querySelector(".time.study"),
-    "Exercise": document.querySelector(".time.exercise"),
-    "Social": document.querySelector(".time.social"),
-    "Self Care": document.querySelector(".time.self-care"),
-  };
+  Work: document.querySelector(".time.work"),
+  Play: document.querySelector(".time.play"),
+  Study: document.querySelector(".time.study"),
+  Exercise: document.querySelector(".time.exercise"),
+  Social: document.querySelector(".time.social"),
+  "Self Care": document.querySelector(".time.self-care"),
+};
 
-  const elementPreviousTimeMap = {
-    "Work": document.querySelector(".time-previous.work"),
-    "Play": document.querySelector(".time-previous.play"),
-    "Study": document.querySelector(".time-previous.study"),
-    "Exercise": document.querySelector(".time-previous.exercise"),
-    "Social": document.querySelector(".time-previous.social"),
-    "Self Care": document.querySelector(".time-previous.self-care"),
-  };
+const elementPreviousTimeMap = {
+  Work: document.querySelector(".time-previous.work"),
+  Play: document.querySelector(".time-previous.play"),
+  Study: document.querySelector(".time-previous.study"),
+  Exercise: document.querySelector(".time-previous.exercise"),
+  Social: document.querySelector(".time-previous.social"),
+  "Self Care": document.querySelector(".time-previous.self-care"),
+};
 
 // POPULATE DOM
+
+const timeFrameMap = {
+  daily: { button: dailyButton, label: "Yesterday - " },
+  weekly: { button: weeklyButton, label: "Last Week - " },
+  monthly: { button: monthlyButton, label: "Last Month - " },
+};
 
 const populateDOM = (data) => {
   data.forEach(appendItem);
@@ -74,24 +81,18 @@ const appendItem = (item) => {
   }
 };
 
-// NAVIGATION BUTTONS
+// NAVIGATION BUTTONS ACTIVE STATE
 
 function activeButton(clickedBtn) {
   toggleButtons.forEach((btn) => btn.classList.remove("active"));
   clickedBtn.classList.add("active");
 }
 
-dailyButton.addEventListener("click", () => {
-  activeButton(dailyButton);
-  populateDOM(data);
-});
+// EVENT LISTENERS
 
-weeklyButton.addEventListener("click", () => {
-  activeButton(weeklyButton);
-  populateDOM(data);
-});
-
-monthlyButton.addEventListener("click", () => {
-  activeButton(monthlyButton);
-  populateDOM(data);
+toggleButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    activeButton(btn);
+    populateDOM(data);
+  });
 });
