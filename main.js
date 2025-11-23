@@ -43,12 +43,6 @@ const elementPreviousTimeMap = {
 
 // POPULATE DOM
 
-const timeFrameMap = {
-  daily: { button: dailyButton, label: "Yesterday - " },
-  weekly: { button: weeklyButton, label: "Last Week - " },
-  monthly: { button: monthlyButton, label: "Last Month - " },
-};
-
 const populateDOM = (data) => {
   data.forEach(appendItem);
 };
